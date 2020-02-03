@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        div.highlightedDescendant b{
+            text-align:center;
+            font-family:'Courier New', Courier, monospace;
+            color: blue;
+
+        }
+
+        div.highlightedChild>b{
+            text-align:center;
+            font-family:'Courier New', Courier, monospace;
+            color: blue;
+
+        }
+
+        div.childSelectorExtended>article>ul>li>a{
+            color: red;
+            font-family: monospace;
+        }
+
+        div#content h2~p{
+            font-style:italic;
+        }
+
+        section.marginCollapse h1{
+            margin: 0 0 50px 0;
+            color: rgb(35, 47, 223);
+        }
+        section.marginCollapse h2{
+            margin: 20px 0 0 0;
+            color: brown;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="highlightedDescendant">
+        I'm <b><i>Descendant Selector</i></b>
+        <i>Hello</i>
+        <div class="inner1">
+            <b>Inner bold (still property applied)</b>
+        </div>
+    </div>
+
+    <div class="highlightedChild">
+        I'm <b><i>Child Selector</i></b>
+        <i>Hello</i>
+        <div class="inner1">
+            <b>Inner bold (property applied only for direct child)</b>
+        </div>
+    </div>
+    
+    <div class="childSelectorExtended">
+        <article>
+            <header>
+                <hr noshade>
+                <center><h1>Fruits List</h1></center>
+                <hr noshade>
+            </header>
+            <ul>
+                <h4></h4>
+                <li><a href=#Apple>Apple</a></li>
+                <li><a href=#Banana>Banana</a></li>
+                <li><a href=#Orange>Orange</a></li>
+                <li><a href=#Mango>Mango</a></li>
+                <li>Elanthapalam</li>
+            </ul>
+            <footer>
+                <center><b><h4>An apple a day keeps Doctor away!</h4></b></center>
+                <hr noshade>
+            </footer>
+
+        </article>
+        
+    </div>
+
+    <section>
+        <header>
+            <hr noshade>
+                <center><h1>~Selector(Sibling Selector)</h1></center>
+            <hr noshade>
+        </header>
+        <div id="content"> 
+            <h1>Heading 1</h1> <p>Some text here</p> 
+            <h2>Heading 2</h2> <p>Some text here</p>
+            <p>Some more text here</p>
+            <div>
+                    <p>More text here</p> 
+            </div>
+        </div>
+    </section>
+
+    <section class="marginCollapse">
+        <header>
+            <hr noshade>
+                <center><h1>Margin Collapse</h1></center>
+            <hr noshade>
+        </header>
+
+        <h1>
+            Hello margin h1
+        </h1>
+        <h2>
+            Hello margin h2
+        </h2>
+        
+    </section>
+
+    
+
+</body>
+</html>
